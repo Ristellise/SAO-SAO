@@ -68,7 +68,6 @@ bool initglsafe()
     glAttachShader(shaderProgram, VertShader);
     glAttachShader(shaderProgram, FragShader);
     glLinkProgram(shaderProgram);
-    glDeleteShader(Vert);
     // Link Vertex Attributes
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
@@ -78,6 +77,11 @@ bool initglsafe()
     glBindBuffer(GL_ARRAY_BUFFER, VertArrObj);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 }
+unsigned int GenerateProgram(char *FragmentSrc, char *VertexSrc)
+{
+    return GenerateProgram(CompileFragment(FragmentSrc), CompileVertex(VertexSrc));
+}
+
 unsigned int GenerateProgram(unsigned int VertexShader, unsigned int FragmentShader)
 {
     unsigned int shaderProgram;
@@ -85,6 +89,8 @@ unsigned int GenerateProgram(unsigned int VertexShader, unsigned int FragmentSha
     glAttachShader(shaderProgram, VertShader);
     glAttachShader(shaderProgram, FragShader);
     glLinkProgram(shaderProgram);
+    glDeleteShader(VertShader);
+    glDeleteShader(FragShader);
     return shaderProgram;
 }
 
@@ -105,7 +111,7 @@ unsigned int CompileFragment(char *FragmentSrc)
     return FragShader;
 }
 
-void CompileVertex(char *VertexSrc)
+unsigned int CompileVertex(char *VertexSrc)
 {
     int success;
     char infoLog[512];
@@ -120,6 +126,7 @@ void CompileVertex(char *VertexSrc)
         glGetShaderInfoLog(VertShader, 512, NULL, infoLog);
         std::cout << "Failed to compile Vertex Shader: " << infoLog << std::endl;
     }
+    return VertShader;
 }
 
 void runtime()

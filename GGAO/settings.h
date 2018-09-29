@@ -10,4 +10,9 @@ unsigned int VertBuff;
 unsigned int VertShader;
 unsigned int FragShader;
 unsigned int VertArrObj;
+float vertices[] = {
+    -0.5f, -0.5f, 0.0f,
+    0.5f, -0.5f, 0.0f,
+    0.0f,  0.5f, 0.0f
+};
 #endif // !_SETTING
