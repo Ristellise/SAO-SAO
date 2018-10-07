@@ -4,8 +4,18 @@
 // Uncap 60FPS.
 #include <string>
 bool VSyncCap = true;
-const char* VertShaderSrc = "#version 330 core\n layout(location = 0) in vec3 aPos; void main(){gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);}";
-char* FragmentShaderSrc = "#version 330 core\n out vec4 FragColor; void main(){FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);}";
+char* VertShaderSrc = "#version 330 core\n"
+    "layout (location = 0) in vec3 aPos;\n"
+    "void main()\n"
+    "{\n"
+    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+    "}\0";
+char* FragmentShaderSrc = "#version 330 core\n"
+    "out vec4 FragColor;\n"
+    "void main()\n"
+    "{\n"
+    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+    "}\n\0";
 unsigned int VertBuff;
 unsigned int VertShader;
 unsigned int FragShader;
@@ -15,4 +25,6 @@ float vertices[] = {
     0.5f, -0.5f, 0.0f,
     0.0f,  0.5f, 0.0f
 };
+unsigned int shaderProgram;
+unsigned int VBO, VAO;
 #endif // !_SETTING

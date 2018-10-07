@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GGAO", "GGAO\GGAO.vcxproj", "{D2AAF5C6-D2FA-47BD-A7B0-ABD2E6EE1DFA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "GGAO\GGAO.vcxproj", "{D2AAF5C6-D2FA-47BD-A7B0-ABD2E6EE1DFA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SeedCore", "SeedCore\SeedCore.vcxproj", "{B680D00C-775A-44AE-B560-C8955D4D24EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{D2AAF5C6-D2FA-47BD-A7B0-ABD2E6EE1DFA}.Release|x64.Build.0 = Release|x64
 		{D2AAF5C6-D2FA-47BD-A7B0-ABD2E6EE1DFA}.Release|x86.ActiveCfg = Release|Win32
 		{D2AAF5C6-D2FA-47BD-A7B0-ABD2E6EE1DFA}.Release|x86.Build.0 = Release|Win32
+		{B680D00C-775A-44AE-B560-C8955D4D24EE}.Debug|x64.ActiveCfg = Debug|x64
+		{B680D00C-775A-44AE-B560-C8955D4D24EE}.Debug|x64.Build.0 = Debug|x64
+		{B680D00C-775A-44AE-B560-C8955D4D24EE}.Debug|x86.ActiveCfg = Debug|Win32
+		{B680D00C-775A-44AE-B560-C8955D4D24EE}.Debug|x86.Build.0 = Debug|Win32
+		{B680D00C-775A-44AE-B560-C8955D4D24EE}.Release|x64.ActiveCfg = Release|x64
+		{B680D00C-775A-44AE-B560-C8955D4D24EE}.Release|x64.Build.0 = Release|x64
+		{B680D00C-775A-44AE-B560-C8955D4D24EE}.Release|x86.ActiveCfg = Release|Win32
+		{B680D00C-775A-44AE-B560-C8955D4D24EE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
